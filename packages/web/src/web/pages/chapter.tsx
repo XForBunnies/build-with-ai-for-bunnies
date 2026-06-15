@@ -245,6 +245,7 @@ export default function ChapterPage() {
           margin-top: 4rem;
           padding-top: 2rem;
           border-top: 1px solid var(--border);
+          align-items: stretch;
         }
         .chapter-nav-btn {
           display: flex;
@@ -257,7 +258,9 @@ export default function ChapterPage() {
           cursor: pointer;
           transition: border-color 0.2s, background 0.2s;
           text-decoration: none;
-          max-width: 48%;
+          flex:1;
+          min-width: 0;
+          box-sizing: border-box;
         }
         .chapter-nav-btn:hover { border-color: var(--accent); background: var(--surface-raised); }
         .chapter-nav-next { margin-left: auto; text-align: right; }
@@ -274,6 +277,7 @@ export default function ChapterPage() {
           color: var(--text);
           line-height: 1.3;
           font-family: 'Lora', serif;
+          word-break: break-word;
         }
 
         @media (max-width: 600px) {
