@@ -140,7 +140,7 @@ export default function ChapterPage() {
           margin: 0 auto;
         }
         .chapter-page {
-          max-width: 780px;
+          max-width: 900px;
           margin: 0 auto;
           padding: 3rem 2.5rem 5rem;
           animation: fadeIn 0.25s ease;
