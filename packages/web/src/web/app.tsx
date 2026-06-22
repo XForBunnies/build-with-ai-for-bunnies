@@ -2,8 +2,6 @@ import { Route, Switch } from "wouter";
 import { Sidebar } from "./components/Sidebar";
 import HomePage from "./pages/index";
 import ChapterPage from "./pages/chapter";
-import { RunableBadge } from "@runablehq/website-runtime";
-
 export default function App() {
   return (
     <div className="app-layout">
@@ -14,7 +12,6 @@ export default function App() {
           <Route path="/read/:slug" component={ChapterPage} />
         </Switch>
       </main>
-      <RunableBadge />
       <style>{`
         .app-layout {
           display: flex;
