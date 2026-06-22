@@ -30,7 +30,13 @@ renderer.paragraph = ({ tokens }) => {
     if (t.type === 'strong') return `<strong>${t.text}</strong>`;
     if (t.type === 'em') return `<em>${t.text}</em>`;
     if (t.type === 'codespan') return `<code>${t.text}</code>`;
-    if (t.type === 'link') return `<a href="${t.href}">${t.text}</a>`;
+    if (t.type === 'link') {
+      const isExternal = t.href.startsWith('http://') || t.href.startsWith('https://');
+      if (isExternal) {
+        return `<a href="${t.href}" target="_blank" rel="noopener noreferrer">${t.text}</a>`;
+      }
+      return `<a href="${t.href}">${t.text}</a>`;
+    }
     return t.raw || '';
   }).join('');
   return `<p>${html}</p>\n`;
