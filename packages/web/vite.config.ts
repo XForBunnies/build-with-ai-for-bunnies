@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
     Object.assign(process.env, env);
 
     return {
-        base: '/',
+        base: '/build-with-ai-for-bunnies/',
         plugins: [react(), tailwind()],
         resolve: {
             alias: {
