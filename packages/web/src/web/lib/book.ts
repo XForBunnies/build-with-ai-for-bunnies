@@ -39,7 +39,7 @@ const cache = new Map<string, string>();
 
 export async function fetchChapterContent(slug: string): Promise<string> {
   if (cache.has(slug)) return cache.get(slug)!;
-  const res = await fetch(`/book/${slug}.json`);
+  const res = await fetch(`${import.meta.env.BASE_URL}/book/${slug}.json`);
   if (!res.ok) throw new Error(`Failed to load chapter: ${slug}`);
   const data = await res.json();
   cache.set(slug, data.content);
